@@ -2,7 +2,7 @@ export class Document {
     constructor(
         public id: string,
         public name: string,
-        public desctription: string,
+        public description: string,
         public url: string,
         public children: []
     ){ }
