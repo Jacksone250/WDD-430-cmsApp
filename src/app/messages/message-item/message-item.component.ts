@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ContactService } from 'src/app/contacts/contact.service';
 import { Message } from '../message.model';
+import { Contact } from 'src/app/contacts/contact.model';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'cms-message-item',
@@ -7,12 +10,15 @@ import { Message } from '../message.model';
   styleUrls: ['./message-item.component.css']
 })
 export class MessageItemComponent implements OnInit {
-  // input needs to be added here
   @Input() message: Message;
+  messageSender: string;
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
+    const contact: Contact = this.contactService.getContact(this.message.sender);
+    this.messageSender = contact.name;
   }
 
 }
+
