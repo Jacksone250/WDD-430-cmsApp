@@ -15,7 +15,9 @@ export class ContactService {
    }
 
   getContacts(): Contact[] {
-    return this.contacts.slice();
+    return this.contacts
+      .sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0)
+      .slice();
   }
 
   getContact(id: string): Contact {
