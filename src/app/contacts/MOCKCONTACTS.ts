@@ -119,6 +119,24 @@ export const MOCKCONTACTS: Contact[] = [
     imageUrl: '../../assets/images/thompsonda.jpg',
     group: null
   },
+  // index 12
+  {
+    id: '18',
+    name: 'Obi Wan Kenobi',
+    email: 'kenobio@byui.edu',
+    phone: '208-496-3776',
+    imageUrl: '../../assets/images/ObiWanKenobi.webp',
+    group: null
+  },
+  // index 12
+  {
+    id: '19',
+    name: 'General Grievous',
+    email: 'Greviousg@byui.edu',
+    phone: '208-496-3776',
+    imageUrl: '../../assets/images/general-grievous.webp',
+    group: null
+  },
 
   // teams
   // index 13
