@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Contact } from '../contact.model';
 
 @Component({
@@ -8,8 +9,10 @@ import { Contact } from '../contact.model';
 })
 export class ContactItemComponent implements OnInit {
   @Input() contact: Contact;
+  @Input() id: string;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

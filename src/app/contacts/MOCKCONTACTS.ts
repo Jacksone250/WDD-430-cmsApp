@@ -121,7 +121,7 @@ export const MOCKCONTACTS: Contact[] = [
   },
   // index 12
   {
-    id: '18',
+    id: '100',
     name: 'Obi Wan Kenobi',
     email: 'kenobio@byui.edu',
     phone: '208-496-3776',
@@ -130,7 +130,7 @@ export const MOCKCONTACTS: Contact[] = [
   },
   // index 12
   {
-    id: '19',
+    id: '101',
     name: 'General Grievous',
     email: 'Greviousg@byui.edu',
     phone: '208-496-3776',
