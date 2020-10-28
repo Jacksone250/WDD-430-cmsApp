@@ -120,23 +120,23 @@ export const MOCKCONTACTS: Contact[] = [
     group: null
   },
   // index 12
-  {
-    id: '100',
-    name: 'Obi Wan Kenobi',
-    email: 'kenobio@byui.edu',
-    phone: '208-496-3776',
-    imageUrl: '../../assets/images/ObiWanKenobi.webp',
-    group: null
-  },
-  // index 12
-  {
-    id: '101',
-    name: 'General Grievous',
-    email: 'Greviousg@byui.edu',
-    phone: '208-496-3776',
-    imageUrl: '../../assets/images/general-grievous.webp',
-    group: null
-  },
+  // {
+  //   id: '100',
+  //   name: 'Obi Wan Kenobi',
+  //   email: 'kenobio@byui.edu',
+  //   phone: '208-496-3776',
+  //   imageUrl: '../../assets/images/ObiWanKenobi.webp',
+  //   group: null
+  // },
+  // // index 12
+  // {
+  //   id: '101',
+  //   name: 'General Grievous',
+  //   email: 'Greviousg@byui.edu',
+  //   phone: '208-496-3776',
+  //   imageUrl: '../../assets/images/general-grievous.webp',
+  //   group: null
+  // },
 
   // teams
   // index 13
