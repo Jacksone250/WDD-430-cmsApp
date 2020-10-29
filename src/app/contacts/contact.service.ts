@@ -50,7 +50,7 @@ export class ContactService {
         return;
     }
 
-    this.maxContactId++
+    this.maxContactId++;
     newContact.id = this.maxContactId.toString();
     this.contacts.push(newContact);
     let contactsListClone = this.contacts.slice();
@@ -65,15 +65,15 @@ export class ContactService {
         return;
     }
 
-    let pos = this.contacts.indexOf(originalContact)
+    let pos = this.contacts.indexOf(originalContact);
     if (pos < 0) {
         return;
     }
 
     newContact.id = originalContact.id;
     this.contacts[pos] = newContact;
-    let contactsListClone = this.contacts.slice()
-    this.contactListChangedEvent.next(contactsListClone)
+    let contactsListClone = this.contacts.slice();
+    this.contactListChangedEvent.next(contactsListClone);
   }
 
   deleteContact(contact: Contact) {
