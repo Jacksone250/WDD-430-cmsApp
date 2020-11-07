@@ -65,15 +65,15 @@ export class DocumentService{
         return;
     }
 
-    let pos = this.documents.indexOf(originalDocument)
+    let pos = this.documents.indexOf(originalDocument);
     if (pos < 0) {
         return;
     }
 
     newDocument.id = originalDocument.id;
     this.documents[pos] = newDocument;
-    let documentsListClone = this.documents.slice()
-    this.documentListChangedEvent.next(documentsListClone)
+    let documentsListClone = this.documents.slice();
+    this.documentListChangedEvent.next(documentsListClone);
   }
 
   deleteDocument(document: Document) {
