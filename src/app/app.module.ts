@@ -19,6 +19,8 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,14 @@ import { FormsModule } from '@angular/forms';
     DocumentItemComponent,
     DocumentDetailComponent,
     DocumentEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    ContactsFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
