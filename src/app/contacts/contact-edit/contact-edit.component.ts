@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 import { Contact } from '../contact.model';
 import { ContactService } from '../contact.service';
@@ -21,34 +22,74 @@ export class ContactEditComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
         let id = params['id'];
 
-        if (id === undefined || id === null) {
+        if (!id) {
           this.editMode = false;
           return;
         }
 
-        this.originalContact = this.contactService.getContact(id);
+        // this.originalContact = this.contactService.getContact(id).pipe((response)=>{ return response.contact});
+        // this.contactService.getContact(this.message.sender).subscribe((response)=>{ return response.contact});
+        this.contactService.getContact(id).subscribe((response)=>{
+          this.originalContact = response.contact;
 
-        if (this.originalContact === undefined || this.originalContact === null) {
-            return;
-        }
-
-        this.editMode = true;
-        this.contact = this.originalContact;
+          if (this.originalContact === undefined || this.originalContact === null) {
+            console.log('exiting ng on init');
+              return;
+          }
   
-        if (this.contact.group.length > 0) {
-          this.groupContacts = this.contact.group;
-        }
+          this.editMode = true;
+          this.contact = JSON.parse(JSON.stringify(this.originalContact));
+    
+          if (this.contact.group.length > 0) {
+            this.groupContacts = this.contact.group;
+          }
+
+        });
+
+        // this.contactService.getContact(this.message.sender).subscribe((response)=>{
+        //   this.messageSender = response.contact.name;
+        // });
+
+        // if (this.originalContact === undefined || this.originalContact === null) {
+        //   console.log('exiting ng on init');
+        //     return;
+        // }
+
+        // this.editMode = true;
+        // this.contact = JSON.parse(JSON.stringify(this.originalContact));
+  
+        // if (this.contact.group.length > 0) {
+        //   this.groupContacts = this.contact.group;
+        // }
     }); 
   }
 
+  // ngOnInit() {
+  //   this.route.params.subscribe((params: Params) => {
+  //     let id = params['id'];
+  //     if (!id) {
+  //       this.editMode = false;
+  //       return;
+  //     }
+  //     this.originalContact = this.contactService.getContact(id);
+  //     if (!this.originalContact) {
+  //       return;
+  //     }
+  //     this.editMode = true;
+  //     this.contact = JSON.parse(JSON.stringify(this.originalContact));
+  //   });
+  // }
+
+
   onSubmit(form: FormGroup) {
     let value = form.value // get values from form’s fields
-    let newContact = new Contact( value.id, 
+    let newContact = new Contact( '',
+                                  value.id, 
                                   value.name, 
                                   value.email, 
                                   value.phone, 
